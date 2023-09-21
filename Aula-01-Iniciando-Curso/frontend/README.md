@@ -1,33 +1,34 @@
-![Integrando seu projeto React com APIs](thumbnail.png)
+# Obtendo lista de dados vindo da api
 
-# Alfood
+- A lógica é a mesma q com o jsx, com a diferença q tu precisa tipar por causa do ts
+```tsx
+import { useEffect, useState } from 'react';
+import IRestaurante from '../../interfaces/IRestaurante';
+import style from './ListaRestaurantes.module.scss';
+import Restaurante from './Restaurante';
+import axios from 'axios';
 
-O Alfood é um site que lista restaurantes e pratos do menu. 
-É um MVP que tá só começando e ainda tem muitas funcionalidades novas para serem desenvolvidas.
+const ListaRestaurantes = () => {
 
-<img src="screencapture.png" alt="Imagem do Alfood" width="50%">
+  const [restaurantes, setRestaurantes] = useState<IRestaurante[]>([])
 
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/v1/restaurantes/').then(resposta => {
+      setRestaurantes(resposta.data.results)
+    }).catch(erro => {
+      console.log(erro)
+    })
+  }, [])
 
-## 🔨 Funcionalidades do projeto
+  return (<section className={style.ListaRestaurantes}>
+    <h1>Os restaurantes mais <em>bacanas</em>!</h1>
+    {restaurantes?.map(item => <Restaurante restaurante={item} key={item.id} />)}
+  </section>)
+}
 
-O Alfood começa com uma listagem estática de seu conteúdo e é esse o problema que queremos resolver.
-No decorrer do curso, vamos implementar toda a camada de comunicação com a API.
+export default ListaRestaurantes
+```
 
-## ✔️ Técnicas e tecnologias utilizadas
+- Prestar atencao no state de restaurante, lembrar que o <> q vem dps do useState é para tu definir o tipo do state, no caso tu tá usando uma interface q é IRestaurente e o [] significa q é para especificar q esse useState é um array, e como valor padrao, ele vem vazio
 
-Se liga nessa lista de tudo que usaremos nesse treinamento:
-
-- `React`
-- `React Hooks`
-- `TypeScript`
-- `axios`
-
-## 🛠️ Abrir e rodar o projeto
-
-Para abrir e rodar o projeto, execute npm i para instalar as dependências e npm start para inicar o projeto.
-
-Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no seu navegador.
-
-## 📚 Mais informações do curso
-
-Busque na plataforma da Alura o curso **Integrando seu projeto React com APIs** publicado na Escola Frontend.
+- Aí dps no useEffect tu colocou q ao renderizar o componente ele faz um get pra api pega os results e seta no state q tu criou
