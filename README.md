@@ -10,3 +10,11 @@
 # Biblioteca MUI
 
 - https://cursos.alura.com.br/course/react-integrando-projeto-react-apis/task/103955
+
+# Padrão REST
+
+- https://www.alura.com.br/artigos/rest-principios-e-boas-praticas?_gl=1*1gkym3q*_ga*MTM1MzIwMDQ4Ni4xNjkwOTk1NzI2*_ga_1EPWSW3PCS*MTY5NTkyNzY3Mi41OS4xLjE2OTU5Mjk0ODYuMC4wLjA.*_fplc*OG8wZUFNR1RjTWFmNWVNek9YSW9UUFhnWXpVZHF5RmV3WFJPZFNDNzBnQkdiY2NwdiUyQmJ5dnFJN0U0MUNiNyUyRnNrZUFyWnByZGUyc0pXY0NmZ3VzdHFGNyUyQkpta1AzQWcxRHQlMkZocnZQT3N2RVFYOGhnUDRucG1KQkJPd2VQdnclM0QlM0Q.
+
+# Curso Swagger
+
+- https://cursos.alura.com.br/course/swagger-documentando-apis
