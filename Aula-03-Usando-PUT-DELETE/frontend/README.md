@@ -1,0 +1,1 @@
+# Como tu já sabe como utilizar o método PUT, tu escolheu não detalhar exatamente cada passo necessário, e a única diferença do tsx para o jsx, é q tu precisou tipar o useState, caso tenha dúvidas de como tu fez acesse o commit e veja o código.
